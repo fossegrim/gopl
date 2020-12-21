@@ -1,0 +1,33 @@
+Within this directory are two go programs, echo2.go and echo3.go, based on the
+echo2.go and echo3.go examples respectively. They have both been modified to
+output their running time in addition to their arguments.
+
+To test the running time of the two programs, we will run each of them five
+times with an absurdly large argument list(the contents of the ARGS file within
+this directory) and compare the time reports.
+
+$ go run echo2.go $(< ARGS) | tail -n1
+0.01491s elapsed
+$ go run echo2.go $(< ARGS) | tail -n1
+0.01468s elapsed
+$ go run echo2.go $(< ARGS) | tail -n1
+0.01409s elapsed
+$ go run echo2.go $(< ARGS) | tail -n1
+0.01489s elapsed
+$ go run echo2.go $(< ARGS) | tail -n1
+0.01455s elapsed
+
+$ go run echo3.go $(< ARGS) | tail -n1
+0.00025s elapsed
+$ go run echo3.go $(< ARGS) | tail -n1
+0.00025s elapsed
+$ go run echo3.go $(< ARGS) | tail -n1
+0.00025s elapsed
+$ go run echo3.go $(< ARGS) | tail -n1
+0.00029s elapsed
+$ go run echo3.go $(< ARGS) | tail -n1
+0.00024s elapsed
+
+As we can see echo3.go is many times faster than echo2.go. Either way the
+performance of echo2.go is not inefficient. The argument list is 37090
+characters long which is an extremely lon

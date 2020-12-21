@@ -1,0 +1,21 @@
+>Try fetchall with longer argument lists, such as samples from the top million
+>websites available at alexa.com. How does the program behave if a website just
+>doesn’t respond? (Section 8.9 describes mechanisms for coping in such cases.)
+The following command fetches the top 10 global website as of 13/12/2020
+according to https://www.alexa.com/topsites.
+---
+$ go run fetchall.go /dev/null $(<SITES)
+0.29s    14299  https://google.com
+0.39s   224435  https://facebook.com
+0.83s   405232  https://amazon.com
+0.88s   532894  https://youtube.com
+0.90s   102653  https://qq.com
+2.34s   290401  https://baidu.com
+3.17s   381969  https://taobao.com
+3.73s   139775  https://tmall.com
+7.65s   216568  https://sohu.com
+Get "https://360.cm": dial tcp 47.90.86.232:443: i/o timeout
+30.00s elapsed
+---
+If a program "just doesn't respond" an error message is printed, as you can see
+in the penultimate line of the output.

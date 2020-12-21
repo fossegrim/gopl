@@ -1,0 +1,10 @@
+>Rewrite PopCount to use a loop instead of a single expression. Compare the
+>performance of the two versions.
+popcount.FlatPopCount is the original PopCount and LoopedPopCount is the
+rewritten one. benchmark.go benchmarks the functions.
+---===---
+$ go run benchmark.go
+100000000 calls to FlatPopCount took 36.268256ms
+100000000 calls to LoopedPopCount took 2.501241433s
+---===---
+As we can see FlatPopCount is much faster.

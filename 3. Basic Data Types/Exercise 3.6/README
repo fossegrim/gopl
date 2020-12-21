@@ -1,0 +1,9 @@
+Within this directory there are two images, supersampled_mandelbrot.png and
+mandelbrot.png. mandelbrot.png is rendered by the mandelbrot.go version of
+Exercise 3.5 and supersampled_mandelbrot.png is rendered by this exercise's
+mandelbrot.go.
+
+The code for this exercise is also very bad. I don't understand this domain at
+all, which lead to using guesswork programming to for example finding out how
+to find the proper offset etc. Either way it works and it's pretty cool :^).
+

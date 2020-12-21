@@ -1,0 +1,14 @@
+This exercise was bad. It required more knowledge / further research than what
+the book has covered so far. As a consequence the solution is hackish. It uses
+two parallell maps, fileLines and counts. I know this is bad design, but I
+didn't want to spend too much time studying outside of the book to learn how to
+do this with one structure in Go. I also disregarded code quality in other parts
+of the code since it would be terrible either way. Anyways it works the way that
+I interpreted the exercise to request. Exercise was ambigious. It is unclear
+whether it meant duplicate as duplicate in a single file or across them all. It
+is also unclear how it should output the files. As for my interpretation of it,
+see the source.
+
+Other people have also had the same problem*.
+
+* https://thetechglider.wordpress.com/2015/11/27/gopl-exercise-1-4/

@@ -1,0 +1,13 @@
+>Write a version of PopCount that counts bits by shifting its argument through 64
+>bit positions, testing the rightmost bit each time. Compare its performance to
+>the table-lookup version.
+popcount.FlatPopCount is the original PopCount, strings.LoopedPopCount is the one
+made in Exercise 2.3 and popcount.NoTablePopCount is the one described in this
+exercise.
+---===---
+$ go run benchmark.go
+100000000 calls to FlatPopCount took 35.422799ms
+100000000 calls to LoopedPopCount took 2.529654696s
+100000000 calls to NoTablePopCount took 7.97820159s
+---===---
+As we can see, the latest version is much slower than the previous two.

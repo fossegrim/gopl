@@ -1,0 +1,28 @@
+>The expression x&(x-1) clears the rightmost non-zero bit of x. Write a version
+>of PopCount that counts bits by using this fact, and assess its performance.
+popcount.FlatPopCount is the original PopCount, strings.LoopedPopCount is the one
+made in Exercise 2.3, popcount.NoTablePopCount is the one made in Exercise 2.4
+and popcount.EpicPopCount is the one made in this execise.
+exercise.
+---===---
+$ go run benchmark.go
+100000000 calls to FlatPopCount took 34.165383ms
+100000000 calls to LoopedPopCount took 2.537845877s
+100000000 calls to NoTablePopCount took 8.07680007s
+100000000 calls to EpicPopCount took 1.515029728s
+---===---
+As we can see, the latest version is faster than all except FlatPopCount in this
+benchmark. I suspect that if we reduce the amount of calls in our benchmark, and
+subsequently reduce the average input to the functions, EpicPopCount will perform
+more closer to, or maybe outperform FlatPopCount. This is because the amount of
+steps EpicPopCount is equal to the population count of the input whereas the
+amount of steps of FlatPopCount is constant.
+---===---
+$ go run benchmark.go
+1536 calls to FlatPopCount took 17.489µs
+1536 calls to LoopedPopCount took 47.281µs
+1536 calls to NoTablePopCount took 213.895µs
+1536 calls to EpicPopCount took 25.252µs
+---===---
+My hypothesis was correct. Here FlatPointCount takes ~0.68 of the time of
+EpicPopCount as opposed to ~0,029 as in the first benchmark of this document.

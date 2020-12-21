@@ -1,0 +1,2 @@
+To demonstrate that the comma package behaves correctly, run the following.
+$ go run comma_demo.go

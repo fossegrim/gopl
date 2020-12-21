@@ -1,0 +1,32 @@
+>Find a website that producess large amounts of data.
+The website, or rather URL, I have choosen for this is a Linux kernel release
+tarball on GitHub, https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz.
+>Investigate caching by running fetchall twice in succession to see whether the
+>reported time changes much.
+The fetchall.go in the following two commands has not been modified.
+---
+$ go run fetchall.go https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz
+32.36s  185312282  https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz
+32.36s elapsed
+$ go run fetchall.go https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz
+31.66s  185312282  https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz
+31.66s elapsed
+---
+There does not seem to be any caching, since the reported times are very similar.
+>Do you get the same content each time? Modify fetchall to print its output to a
+>file so it can be examined.
+The fetchall.go in the following two commands has been modified to write the URL
+bodies to the file with the name of the first argument.
+---
+$ go run fetchall.go linux1.tar.gz https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz
+21.46s  185312282  https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz
+22.09s elapsed
+$ go run fetchall.go linux2.tar.gz https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz
+32.34s  185312282  https://github.com/torvalds/linux/archive/v5.10-rc7.tar.gz
+32.34s elapsed
+$ diff linux1.tar.gz linux2.tar.gz
+$ echo $?
+0
+---
+We get the same content each time as is evident by diff(1) not outputting any
+differences and the exit status being 0.
