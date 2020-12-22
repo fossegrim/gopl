@@ -1,0 +1,6 @@
+> Modify reverse to reverse the characters of a []byte slice that represents a
+> UTF-8-encoded string, in place. Can you do it without allocating new memory?
+Technically any solution has to allocate memory for the function and variables
+inside it, but I what the exercise means to ask is if you can do it without
+allocating memory for another slice, array or other composite data structure.
+The answer to that question is YES.
