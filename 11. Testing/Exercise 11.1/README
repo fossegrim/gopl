@@ -1,0 +1,6 @@
+>Exercise 11.1: Write tests for the charcount program in Section 4.3.
+I interpret "charcount program in section 4.3" as my solution to Exercise 4.8 and
+not as the charcount example program.
+
+I had to extract the counting functionality into a pure function to make testing
+as described in this section possible.
