@@ -1,4 +1,10 @@
 // panichack doubles a number using a novel panic/defer/recover hack.
+//
+// NOTE: my solution is probably not what the authors had in mind.
+//       After writing my solution I went googling and found this
+//       https://github.com/ray-g/gopl/blob/master/ch05/ex5.19/oops.go
+//       I think that is the expected way of solving in. Mine
+//       interpreted "return" very liberally hehe :^)
 package main
 
 import (
