@@ -1,0 +1,3 @@
+The reason the help message contains °C when the default value of 20.0 does not
+is that the help messages are created using the String method of the value
+interface as opposed to the source code literal notation.
